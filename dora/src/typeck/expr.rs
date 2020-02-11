@@ -11,8 +11,8 @@ use crate::sym::Sym::SymClass;
 use crate::ty::{BuiltinType, TypeList, TypeParamId};
 use crate::typeck::lookup::MethodLookup;
 use crate::vm::{
-    self, find_field_in_class, find_methods_in_class, CallType, ClassId, ConvInfo, Fct, FctId,
-    FctParent, FctSrc, FileId, ForTypeInfo, IdentType, Intrinsic, VM,
+    self, find_field_in_class, find_method_in_class, find_methods_in_class, CallType, ClassId,
+    ConvInfo, Fct, FctId, FctParent, FctSrc, FileId, ForTypeInfo, IdentType, Intrinsic, VM,
 };
 
 use dora_parser::ast::visit::Visitor;
@@ -1693,6 +1693,34 @@ impl<'a, 'ast> TypeCheck<'a, 'ast> {
                 let fty = replace_type_param(
                     self.vm,
                     field.ty,
+                    &class_type_params,
+                    &TypeList::empty(),
+                    None,
+                );
+
+                self.src.set_ty(e.id, fty);
+                self.expr_type = fty;
+                return;
+            }
+            if let Some((cls_ty, method_id)) =
+                find_method_in_class(self.vm, object_type, name, false)
+            {
+                //  check that the function is defined without () ...
+                /*
+                let fct = self.vm.fcts.idx(method_id);
+                let fct = fct.read();
+                fct. ...
+                */
+
+                let call_type = Arc::new(CallType::Method(cls_ty, method_id, TypeList::Empty));
+                self.src.map_calls.insert_or_replace(e.id, call_type);
+
+                let method = self.vm.fcts.idx(method_id);
+                let method = method.read();
+                let class_type_params = cls_ty.type_params(self.vm);
+                let fty = replace_type_param(
+                    self.vm,
+                    method.return_type,
                     &class_type_params,
                     &TypeList::empty(),
                     None,
