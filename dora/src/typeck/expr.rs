@@ -1256,6 +1256,14 @@ impl<'a, 'ast> TypeCheck<'a, 'ast> {
             let fct_id = lookup.found_fct_id().unwrap();
             let return_type = lookup.found_ret().unwrap();
 
+            let fct = self.vm.fcts.idx(fct_id);
+            let fct = fct.read();
+            if !fct.has_parentheses {
+                let name = self.vm.interner.str(method_name).to_string();
+                let msg = SemError::MethodDeclaredWithoutParenthesesCalledWithParentheses(name);
+                self.vm.diag.lock().report(self.file, e.pos, msg);
+            }
+
             let call_type = if let BuiltinType::Trait(trait_id) = object_type {
                 CallType::Trait(trait_id, fct_id)
             } else {
@@ -1705,12 +1713,13 @@ impl<'a, 'ast> TypeCheck<'a, 'ast> {
             if let Some((cls_ty, method_id)) =
                 find_method_in_class(self.vm, object_type, name, false)
             {
-                //  check that the function is defined without () ...
-                /*
                 let fct = self.vm.fcts.idx(method_id);
                 let fct = fct.read();
-                fct. ...
-                */
+                if fct.has_parentheses {
+                    let name = self.vm.interner.str(name).to_string();
+                    let msg = SemError::MethodDeclaredWithParenthesesCalledWithoutParentheses(name);
+                    self.vm.diag.lock().report(self.file, e.pos, msg);
+                }
 
                 let call_type = Arc::new(CallType::Method(cls_ty, method_id, TypeList::Empty));
                 self.src.map_calls.insert_or_replace(e.id, call_type);

@@ -369,7 +369,7 @@ pub fn walk_expr<'v, V: Visitor<'v>>(v: &mut V, e: &'v Expr) {
 
 fn iter_some<T>(opt: &Option<Vec<T>>) -> impl Iterator<Item = &T> {
     match opt {
-        Some(opt) => opt.iter(),
+        Some(vec) => vec.iter(),
         None => (&[]).iter(),
     }
 }
