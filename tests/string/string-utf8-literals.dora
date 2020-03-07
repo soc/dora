@@ -17,8 +17,8 @@ fun main() {
     assert(val.codePoints().length == 2);
     let it = val.codePoints();
 
-    assert(it.next().toInt() == 0xFC);
-    assert(it.next().toInt() == 0xDF);
+    assert(it.next().toInt == 0xFC);
+    assert(it.next().toInt == 0xDF);
     assert(it.hasNext() == false);
 
     let it = val.codePoints();

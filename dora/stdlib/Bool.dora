@@ -1,7 +1,7 @@
 @internal class Bool {
-  @internal fun toInt() -> Int;
+  @internal fun toInt -> Int;
 
-  fun hash() -> Int = self.toInt();
+  fun hash() -> Int = self.toInt;
 
   fun toString() -> String = if self { "true" } else { "false" };
 

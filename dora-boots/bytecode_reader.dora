@@ -1152,7 +1152,7 @@ class BytecodeReader(let data: Array[Byte], let visitor: BytecodeVisitor) {
         let data = self.data;
         let value = data(self.pos);
 
-        if value.toInt() == BC_WIDE {
+        if value.toInt == BC_WIDE {
             self.pos = self.pos + 1;
             true
         } else {
@@ -1201,7 +1201,7 @@ class BytecodeReader(let data: Array[Byte], let visitor: BytecodeVisitor) {
         let value = data(self.pos);
         self.pos = self.pos + 1;
 
-        value.toInt()
+        value.toInt
     }
 
     fun readInt() -> Int {

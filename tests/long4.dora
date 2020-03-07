@@ -1,5 +1,5 @@
 fun main() {
-    assert(three().toInt() == 3);
+    assert(three().toInt == 3);
 }
 
 fun three() -> Long {

@@ -121,11 +121,11 @@ class AssemblerX64: Assembler {
             self.emitByte(imm.toByte());
         } else if reg == RAX {
             self.emitByte(rax_opcode);
-            self.emitInt(imm.toInt());
+            self.emitInt(imm.toInt);
         } else {
             self.emitByte(0x81Y);
             self.emitModRm(0b11, modrm_reg, reg.lowBits());
-            self.emitInt(imm.toInt());
+            self.emitInt(imm.toInt);
         }
     }
 
@@ -158,7 +158,7 @@ class AssemblerX64: Assembler {
         // r - extension of modrm-reg field
         // x - extension of sib index field
         // b - extension of modrm-rm/sib base/opcode reg field
-        let opcode = 0x40 | w.toInt() << 3 | r.toInt() << 2 | x.toInt() << 1 | b.toInt();
+        let opcode = 0x40 | w.toInt << 3 | r.toInt << 2 | x.toInt << 1 | b.toInt;
         self.emitByte(opcode.toByte());
     }
 

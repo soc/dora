@@ -50,7 +50,7 @@ fun isValidUtf8(data: Array[Byte]) -> Bool {
   var i = 0;
 
   while i < data.length {
-    let by = data.get(i).toInt();
+    let by = data.get(i).toInt;
     var codePoint = 0;
     var nextBytes = 0;
     var min = 0;
@@ -91,7 +91,7 @@ fun isValidUtf8(data: Array[Byte]) -> Bool {
         return false;
       }
 
-      let by = data.get(i).toInt();
+      let by = data.get(i).toInt;
 
       if by & 0xC0 != 0x80 {
         return false;

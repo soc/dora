@@ -4,7 +4,7 @@ class BytecodeFunction(let code: Array[Byte], let const_pool: Array[ConstPoolEnt
     }
 
     fun codeAt(idx: Int) -> Int {
-        self.code.get(idx).toInt()
+        self.code.get(idx).toInt
     }
 
     fun codeIntAt(idx: Int) -> Int {
@@ -18,7 +18,7 @@ class BytecodeFunction(let code: Array[Byte], let const_pool: Array[ConstPoolEnt
 }
 
 @open @abstract class ConstPoolEntry {
-    fun toInt() -> Option[Int] {
+    fun toInt -> Option[Int] {
         if self is ConstPoolInt {
             some[Int]((self as ConstPoolInt).value)
         } else {

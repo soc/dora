@@ -85,8 +85,8 @@ class Immediate(let value: Long) {
         self.value.toByte()
     }
 
-    fun toInt() -> Int {
-        self.value.toInt()
+    fun toInt -> Int {
+        self.value.toInt
     }
 
     fun toLong() -> Long {
@@ -135,7 +135,7 @@ fun printBuffer(buffer: Array[Byte]) {
     while i < buffer.length {
         let val = buffer(i);
         if i > 0 { print(" "); }
-        print(intToHexString(val.toInt(), 2));
+        print(intToHexString(val.toInt, 2));
         i = i + 1;
     }
 }

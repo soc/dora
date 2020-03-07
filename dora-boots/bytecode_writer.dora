@@ -773,14 +773,14 @@ class BytecodeWriter {
             assert(jump.label.offset() > jump.inst);
             let offset = jump.label.offset() - jump.inst;
 
-            let opcode = self.code.get(jump.inst).toInt();
+            let opcode = self.code.get(jump.inst).toInt;
 
             if opcode == BC_WIDE {
                 // wide is guaranteed to not use constant pool
                 self.patchInt(jump.target, offset);
             } else if isWide(offset) {
                 // Need to update const pool entry
-                let idx = self.code.get(jump.target).toInt();
+                let idx = self.code.get(jump.target).toInt;
                 self.constPool.set(idx, ConstPoolInt(offset));
             } else {
                 // Offset fits into byte, replace instruction with jump+immediate
@@ -861,7 +861,7 @@ class BytecodeWriter {
 
     fun emitReg1AndByte(inst: Int, r1: BytecodeRegister, offset: Byte) {
         self.emitVal2(inst, r1.value);
-        self.emitByte(offset.toInt());
+        self.emitByte(offset.toInt);
     }
 
     fun emitReg2(inst: Int, r1: BytecodeRegister, r2: BytecodeRegister) {

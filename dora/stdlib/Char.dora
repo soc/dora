@@ -1,15 +1,15 @@
 @internal class Char {
-  @internal fun toInt() -> Int;
+  @internal fun toInt -> Int;
   @internal fun toLong() -> Long;
   @internal fun toString() -> String;
 
   @internal fun equals(rhs: Char) -> Bool;
   @internal fun compareTo(rhs: Char) -> Int;
 
-  fun hash() -> Int = self.toInt();
+  fun hash() -> Int = self.toInt;
 
   fun encodeUtf8(bytes: Array[Byte], offset: Int) {
-    let val = self.toInt();
+    let val = self.toInt;
 
     if val < 0x80 {
       bytes.set(offset, val.toByte());
@@ -29,7 +29,7 @@
   }
 
   fun lenUtf8() -> Int {
-    let val = self.toInt();
+    let val = self.toInt;
 
     if val < 0x80 {
       return 1;

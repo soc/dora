@@ -31,7 +31,7 @@
   @internal fun toIntOrZero() -> Int;
   @internal fun toLongOrZero() -> Long;
 
-  fun toInt() -> Option[Int] {
+  fun toInt -> Option[Int] {
     if self.toIntSuccess() {
       some[Int](self.toIntOrZero())
     } else {
@@ -104,12 +104,12 @@
     let array = Array[Byte](16);
     var at = array.length;
     while (data != 0L) {
-      let digit = (data & 0xFL).toInt();
+      let digit = (data & 0xFL).toInt;
 
       if digit < 10 {
-        array(at - 1) = ('0'.toInt() + digit).toByte();
+        array(at - 1) = ('0'.toInt + digit).toByte();
       } else {
-        array(at - 1) = ('A'.toInt() + digit - 10).toByte();
+        array(at - 1) = ('A'.toInt + digit - 10).toByte();
       }
 
       data = data.shiftRight(4);

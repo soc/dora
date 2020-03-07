@@ -241,7 +241,7 @@ class SsaGen(let bc: BytecodeFunction, let starts: BitSet, let blocks: Int): Byt
     @override fun visitConstByte(dest: BytecodeRegister, value: Byte) { unimplemented(); }
     @override fun visitConstChar(dest: BytecodeRegister, idx: ConstPoolId) { unimplemented(); }
     @override fun visitConstInt(dest: BytecodeRegister, idx: ConstPoolId) {
-        let value = self.bc.constPool(idx).toInt().unwrap();
+        let value = self.bc.constPool(idx).toInt.unwrap();
         let inst = IntConst(value);
         self.currentBlock.appendInst(inst);
         self.writeVariable(dest, self.currentBlock, inst);
@@ -510,21 +510,21 @@ class BasicBlockFinder(let bc: BytecodeFunction): BytecodeVisitor {
         self.insert(self.offset + offset);
     }
     @override fun visitJumpIfFalseConst(opnd: BytecodeRegister, idx: ConstPoolId) {
-        let offset = self.bc.constPool(idx).toInt().unwrap();
+        let offset = self.bc.constPool(idx).toInt.unwrap();
         self.insert(self.offset + offset);
     }
     @override fun visitJumpIfTrue(opnd: BytecodeRegister, offset: Int) {
         self.insert(self.offset + offset);
     }
     @override fun visitJumpIfTrueConst(opnd: BytecodeRegister, idx: ConstPoolId) {
-        let offset = self.bc.constPool(idx).toInt().unwrap();
+        let offset = self.bc.constPool(idx).toInt.unwrap();
         self.insert(self.offset + offset);
     }
     @override fun visitJump(offset: Int) {
         self.insert(self.offset + offset);
     }
     @override fun visitJumpConst(idx: ConstPoolId) {
-        let offset = self.bc.constPool(idx).toInt().unwrap();
+        let offset = self.bc.constPool(idx).toInt.unwrap();
         self.insert(self.offset + offset);
     }
 

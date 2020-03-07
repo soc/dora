@@ -90,7 +90,7 @@ fun makeTree(h: Int) -> TreeNode {
 }
 
 fun initialize() {
-    let ntrees = ((size * MEG).toLong() / treeSize).toInt();
+    let ntrees = ((size * MEG).toLong() / treeSize).toInt;
     trees = Array[TreeNode](ntrees);
 
     println("Allocating " + ntrees.toString() + " trees.");
@@ -155,7 +155,7 @@ fun replaceTree(full: TreeNode, partial: TreeNode) {
 }
 
 fun oldGenAlloc(n: Long) {
-    let full = (n / treeSize).toInt();
+    let full = (n / treeSize).toInt;
     var partial = n % treeSize;
 
     var i = 0;
@@ -279,11 +279,11 @@ fun main() {
 
     treeSize = heightToBytes(treeHeight);
 
-    size = argv(0).toInt().unwrap();
-    workUnits = argv(1).toInt().unwrap();
-    promoteRate = argv(2).toInt().unwrap();
-    ptrMutRate = argv(3).toInt().unwrap();
-    steps = argv(4).toInt().unwrap();
+    size = argv(0).toInt.unwrap();
+    workUnits = argv(1).toInt.unwrap();
+    promoteRate = argv(2).toInt.unwrap();
+    ptrMutRate = argv(3).toInt.unwrap();
+    steps = argv(4).toInt.unwrap();
 
     println("GCOld: version 1.0");
     println(size.toString() + " megabytes of live storage");

@@ -1,5 +1,5 @@
 @internal class Double {
-  @internal fun toInt() -> Int;
+  @internal fun toInt -> Int;
   @internal fun toLong() -> Long;
   @internal fun toFloat() -> Float;
   @internal fun toString() -> String;
@@ -34,7 +34,7 @@
   @internal fun isNan() -> Bool;
   @internal fun sqrt() -> Double;
 
-  fun hash() -> Int = self.asLong().toInt();
+  fun hash() -> Int = self.asLong().toInt;
 
   @static fun bits() -> Int = 64;
   @static fun bytes() -> Int = 8;

@@ -1,5 +1,5 @@
 @internal class Byte {
-  @internal fun toInt() -> Int;
+  @internal fun toInt -> Int;
   @internal fun toLong() -> Long;
   @internal fun toString() -> String;
 
@@ -9,7 +9,7 @@
   @internal fun equals(rhs: Byte) -> Bool;
   @internal fun compareTo(rhs: Byte) -> Int;
 
-  fun hash() -> Int = self.toInt();
+  fun hash() -> Int = self.toInt;
 
   @static fun bits() -> Int = 8;
   @static fun bytes() -> Int = 1;
