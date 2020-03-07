@@ -88,7 +88,7 @@ class Vec[T] {
     return temp;
   }
 
-  fun length() -> Int {
+  fun length -> Int {
     return self.len;
   }
 
@@ -97,7 +97,7 @@ class Vec[T] {
   }
 
   fun capacity() -> Int {
-    return self.array.length();
+    return self.array.length;
   }
 
   fun first() -> Option[T] {
@@ -125,7 +125,7 @@ class VecIter[T](let data: Vec[T]) {
   var idx: Int = 0;
 
   fun hasNext() -> Bool {
-    self.idx < self.data.length()
+    self.idx < self.data.length
   }
 
   fun next() -> T {
@@ -136,7 +136,7 @@ class VecIter[T](let data: Vec[T]) {
 fun removeItem[T: Equals](vec: Vec[T], elem: T) {
   var i = 0;
 
-  while i < vec.length() {
+  while i < vec.length {
     if vec.get(i).equals(elem) {
       vec.removeAt(i);
     } else {

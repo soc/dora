@@ -12,7 +12,7 @@ class TestRetVoidVisitor: BytecodeVisitor {
     let fct = writer.generate();
     let visitor = TestRetVoidVisitor();
     assert(fct.code.get(0).toInt() == BC_RET_VOID);
-    assert(fct.code.length() == 1);
+    assert(fct.code.length == 1);
     readBytecode(fct.code, visitor);
     assert(visitor.found);
 }
@@ -33,7 +33,7 @@ class TestRetIntVisitor: BytecodeVisitor {
     let visitor = TestRetIntVisitor();
     assert(fct.code.get(0).toInt() == BC_RET_INT);
     assert(fct.code.get(1).toInt() == 17);
-    assert(fct.code.length() == 2);
+    assert(fct.code.length == 2);
     readBytecode(fct.code, visitor);
     assert(visitor.found);
 }
@@ -55,7 +55,7 @@ class TestRetWideVisitor: BytecodeVisitor {
     assert(fct.codeAt(0) == BC_WIDE);
     assert(fct.codeIntAt(1) == BC_RET_INT);
     assert(fct.codeIntAt(5) == 256);
-    assert(fct.code.length() == 9);
+    assert(fct.code.length == 9);
     readBytecode(fct.code, visitor);
     assert(visitor.found);
 }
@@ -78,7 +78,7 @@ class TestMovVisitor: BytecodeVisitor {
     assert(fct.codeAt(0) == BC_MOV_INT);
     assert(fct.codeAt(1) == 0);
     assert(fct.codeAt(2) == 1);
-    assert(fct.code.length() == 3);
+    assert(fct.code.length == 3);
     readBytecode(fct.code, visitor);
     assert(visitor.found);
 }
@@ -102,7 +102,7 @@ class TestMovWideVisitor: BytecodeVisitor {
     assert(fct.codeIntAt(1) == BC_MOV_INT);
     assert(fct.codeIntAt(5) == 256);
     assert(fct.codeIntAt(9) == 255);
-    assert(fct.code.length() == 13);
+    assert(fct.code.length == 13);
     readBytecode(fct.code, visitor);
     assert(visitor.found);
 }
@@ -125,7 +125,7 @@ class TestConstByteVisitor: BytecodeVisitor {
     assert(fct.codeAt(0) == BC_CONST_BYTE);
     assert(fct.codeAt(1) == 255);
     assert(fct.codeAt(2) == 255);
-    assert(fct.code.length() == 3);
+    assert(fct.code.length == 3);
     readBytecode(fct.code, visitor);
     assert(visitor.found);
 }
@@ -149,7 +149,7 @@ class TestConstByteWideVisitor: BytecodeVisitor {
     assert(fct.codeIntAt(1) == BC_CONST_BYTE);
     assert(fct.codeIntAt(5) == 256);
     assert(fct.codeAt(9) == 255);
-    assert(fct.code.length() == 10);
+    assert(fct.code.length == 10);
     readBytecode(fct.code, visitor);
     assert(visitor.found);
 }
@@ -172,7 +172,7 @@ class TestConstStringVisitor: BytecodeVisitor {
     assert(fct.codeAt(0) == BC_CONST_STRING);
     assert(fct.codeAt(1) == 7);
     assert(fct.codeAt(2) == 0);
-    assert(fct.code.length() == 3);
+    assert(fct.code.length == 3);
     readBytecode(fct.code, visitor);
     assert(visitor.found);
 }
@@ -197,7 +197,7 @@ class TestSubFloatVisitor: BytecodeVisitor {
     assert(fct.codeAt(1) == 2);
     assert(fct.codeAt(2) == 9);
     assert(fct.codeAt(3) == 255);
-    assert(fct.code.length() == 4);
+    assert(fct.code.length == 4);
     readBytecode(fct.code, visitor);
     assert(visitor.found);
 }
@@ -219,7 +219,7 @@ class TestJumpBackVisitor: BytecodeVisitor {
     let visitor = TestJumpBackVisitor();
     assert(fct.codeAt(0) == BC_JUMP_LOOP);
     assert(fct.codeAt(1) == 0);
-    assert(fct.code.length() == 2);
+    assert(fct.code.length == 2);
     readBytecode(fct.code, visitor);
     assert(visitor.found);
 }
@@ -253,7 +253,7 @@ class TestJumpBackWideVisitor: BytecodeVisitor {
     assert(fct.codeAt(256) == BC_WIDE);
     assert(fct.codeIntAt(257) == BC_JUMP_LOOP);
     assert(fct.codeIntAt(261) == 256);
-    assert(fct.code.length() == 265);
+    assert(fct.code.length == 265);
     readBytecode(fct.code, visitor);
     assert(visitor.found == 257);
 }
@@ -276,7 +276,7 @@ class TestJumpVisitor: BytecodeVisitor {
     let visitor = TestJumpVisitor();
     assert(fct.codeAt(0) == BC_JUMP);
     assert(fct.codeAt(1) == 2);
-    assert(fct.code.length() == 2);
+    assert(fct.code.length == 2);
     readBytecode(fct.code, visitor);
     assert(visitor.found);
 }
@@ -308,7 +308,7 @@ class TestJumpFarVisitor: BytecodeVisitor {
     let visitor = TestJumpFarVisitor();
     assert(fct.codeAt(0) == BC_JUMP_CONST);
     assert(fct.codeAt(1) == 0);
-    assert(fct.code.length() == 256);
+    assert(fct.code.length == 256);
     assert(fct.constPool(ConstPoolId(0)).toInt().unwrap() == 256);
     readBytecode(fct.code, visitor);
     assert(visitor.found == 255);
@@ -334,7 +334,7 @@ class TestCondJumpVisitor: BytecodeVisitor {
     assert(fct.codeAt(0) == BC_JUMP_IF_TRUE);
     assert(fct.codeAt(1) == 9);
     assert(fct.codeAt(2) == 3);
-    assert(fct.code.length() == 3);
+    assert(fct.code.length == 3);
     readBytecode(fct.code, visitor);
     assert(visitor.found);
 }
@@ -369,7 +369,7 @@ class TestCondJumpFarVisitor: BytecodeVisitor {
     assert(fct.codeAt(1) == 9);
     assert(fct.codeAt(2) == 0);
     assert(fct.codeAt(3) == BC_RET_VOID);
-    assert(fct.code.length() == 256);
+    assert(fct.code.length == 256);
     assert(fct.constPool(ConstPoolId(0)).toInt().unwrap() == 256);
     readBytecode(fct.code, visitor);
     assert(visitor.found == 254);
@@ -396,7 +396,7 @@ class TestCondJumpWideVisitor: BytecodeVisitor {
     assert(fct.codeIntAt(1) == BC_JUMP_IF_TRUE);
     assert(fct.codeIntAt(5) == 256);
     assert(fct.codeIntAt(9) == 13);
-    assert(fct.code.length() == 13);
+    assert(fct.code.length == 13);
     readBytecode(fct.code, visitor);
     assert(visitor.found);
 }

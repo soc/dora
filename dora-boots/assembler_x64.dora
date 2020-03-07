@@ -226,7 +226,7 @@ class AssemblerX64: Assembler {
     asm1(buffer, 1, 0x54Y);
     asm2(buffer, 2, 0x41Y, 0x50Y);
     asm2(buffer, 4, 0x41Y, 0x57Y);
-    assert(buffer.length() == 6);
+    assert(buffer.length == 6);
 }
 
 @test fun testAsmPopqr(_x: Testing) {
@@ -240,7 +240,7 @@ class AssemblerX64: Assembler {
     asm1(buffer, 1, 0x5CY);
     asm2(buffer, 2, 0x41Y, 0x58Y);
     asm2(buffer, 4, 0x41Y, 0x5FY);
-    assert(buffer.length() == 6);
+    assert(buffer.length == 6);
 }
 
 @test fun testAsmMovqrr(_x: Testing) {
@@ -250,7 +250,7 @@ class AssemblerX64: Assembler {
     let buffer = asm.finalize();
     asm3(buffer, 0, 0x49Y, 0x89Y, 0xC7Y);
     asm3(buffer, 3, 0x4CY, 0x89Y, 0xF8Y);
-    assert(buffer.length() == 6);
+    assert(buffer.length == 6);
 }
 
 @test fun testAsmMovlrr(_x: Testing) {
@@ -262,7 +262,7 @@ class AssemblerX64: Assembler {
     asm3(buffer, 0, 0x41Y, 0x89Y, 0xC7Y);
     asm3(buffer, 3, 0x44Y, 0x89Y, 0xF8Y);
     asm2(buffer, 6, 0x89Y, 0xC1Y);
-    assert(buffer.length() == 8);
+    assert(buffer.length == 8);
 }
 
 @test fun testAsmAddqrr(_x: Testing) {
@@ -276,7 +276,7 @@ class AssemblerX64: Assembler {
     asm3(buffer, 3, 0x4CY, 0x01Y, 0xE0Y);
     asm3(buffer, 6, 0x49Y, 0x01Y, 0xC4Y);
     asm3(buffer, 9, 0x49Y, 0x01Y, 0xE7Y);
-    assert(buffer.length() == 12);
+    assert(buffer.length == 12);
 }
 
 @test fun testAsmAddlrr(_x: Testing) {
@@ -286,7 +286,7 @@ class AssemblerX64: Assembler {
     let buffer = asm.finalize();
     asm2(buffer, 0, 0x01Y, 0xD8Y);
     asm3(buffer, 2, 0x44Y, 0x01Y, 0xF9Y);
-    assert(buffer.length() == 5);
+    assert(buffer.length == 5);
 }
 
 @test fun testAsmAddqri(_x: Testing) {
@@ -305,7 +305,7 @@ class AssemblerX64: Assembler {
     asmInt(buffer, 17, 0x2211);
     asm3(buffer, 21, 0x49Y, 0x81Y, 0xC7Y);
     asmInt(buffer, 24, 0x2211);
-    assert(buffer.length() == 28);
+    assert(buffer.length == 28);
 }
 
 @test fun testAsmSubqrr(_x: Testing) {
@@ -315,7 +315,7 @@ class AssemblerX64: Assembler {
     let buffer = asm.finalize();
     asm3(buffer, 0, 0x48Y, 0x29Y, 0xD8Y);
     asm3(buffer, 3, 0x4CY, 0x29Y, 0xF9Y);
-    assert(buffer.length() == 6);
+    assert(buffer.length == 6);
 }
 
 @test fun testAsmSubqri(_x: Testing) {
@@ -334,7 +334,7 @@ class AssemblerX64: Assembler {
     asmInt(buffer, 17, 0x2211);
     asm3(buffer, 21, 0x49Y, 0x81Y, 0xEFY);
     asmInt(buffer, 24, 0x2211);
-    assert(buffer.length() == 28);
+    assert(buffer.length == 28);
 }
 
 @test fun testAsmRetq(_x: Testing) {
@@ -342,7 +342,7 @@ class AssemblerX64: Assembler {
     asm.retq();
     let buffer = asm.finalize();
     asm1(buffer, 0, 0xC3Y);
-    assert(buffer.length() == 1);
+    assert(buffer.length == 1);
 }
 
 @test fun testAsmNop(_x: Testing) {
@@ -350,7 +350,7 @@ class AssemblerX64: Assembler {
     asm.nop();
     let buffer = asm.finalize();
     asm1(buffer, 0, 0x90Y);
-    assert(buffer.length() == 1);
+    assert(buffer.length == 1);
 }
 
 @test fun testAsmCdqCqo(_x: Testing) {
@@ -359,5 +359,5 @@ class AssemblerX64: Assembler {
     asm.cqo();
     let buffer = asm.finalize();
     asm1(buffer, 0, 0x99Y);
-    assert(buffer.length() == 3);
+    assert(buffer.length == 3);
 }

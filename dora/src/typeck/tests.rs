@@ -4,8 +4,8 @@ use crate::vm::ConstValue;
 
 #[test]
 fn type_method_len() {
-    ok("fun f(a: String) -> Int { return a.length(); }");
-    ok("fun f(a: String) -> Int { return \"abc\".length(); }");
+    ok("fun f(a: String) -> Int { return a.length; }");
+    ok("fun f(a: String) -> Int { return \"abc\".length; }");
 }
 
 #[test]

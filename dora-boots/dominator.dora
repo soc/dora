@@ -15,7 +15,7 @@ fun findBackEdges(graph: Graph) {
         let block = worklist.last().unwrap();
         let successorIndex = successorsVisited(block.id);
 
-        if successorIndex == block.successors.length() {
+        if successorIndex == block.successors.length {
             worklist.pop();
             visiting.remove(block.id);
             visited.insert(block.id);

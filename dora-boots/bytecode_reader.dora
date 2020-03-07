@@ -226,7 +226,7 @@ fun readBytecode(code: Array[Byte], visitor: BytecodeVisitor) {
 
 class BytecodeReader(let data: Array[Byte], let visitor: BytecodeVisitor) {
     var pos: Int = 0;
-    var length: Int = data.length();
+    var length: Int = data.length;
 
     fun read() {
         while self.pos < self.length {

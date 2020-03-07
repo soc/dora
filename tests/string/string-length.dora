@@ -1,6 +1,6 @@
 fun main() {
-  assert("abc".length() == 3);
+  assert("abc".length == 3);
 
   let x = "abcdef";
-  assert(x.length() == 6);
+  assert(x.length == 6);
 }

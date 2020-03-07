@@ -152,7 +152,7 @@ class LoopHeader(let header: Block) {
     }
 
     fun numberBackEdges() -> Int {
-        self.backEdges.length()
+        self.backEdges.length
     }
 }
 
@@ -180,7 +180,7 @@ class Input(var idx: Int, var value: Inst, var usedBy: Inst) {
     }
 
     fun addInput(inst: Inst) {
-        let input = Input(self.inputs.length(), inst, self);
+        let input = Input(self.inputs.length, inst, self);
         self.inputs.push(input);
     }
 
@@ -223,7 +223,7 @@ class Input(var idx: Int, var value: Inst, var usedBy: Inst) {
     }
 
     fun registerUses() {
-        let inputs = self.inputs.length();
+        let inputs = self.inputs.length;
         var idx = 0;
 
         while idx < inputs {

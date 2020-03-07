@@ -24,15 +24,15 @@ class SsaGen(let bc: BytecodeFunction, let starts: BitSet, let blocks: Int): Byt
         self.graph.addBlock(self.currentBlock);
         self.graph.setEntryBlock(self.currentBlock);
         self.graph.setExitBlock(self.currentBlock);
-        self.currentDef = Array[HashMap[Block, Inst]](self.bc.registers.length());
+        self.currentDef = Array[HashMap[Block, Inst]](self.bc.registers.length);
         self.incompletePhis = Array[HashMap[BytecodeRegister, PhiInst]](self.blocks);
         self.sealedBlocks = BitSet(self.blocks);
 
-        for i in range(0, self.currentDef.length()) {
+        for i in range(0, self.currentDef.length) {
             self.currentDef(i) = HashMap[Block, Inst]();
         }
 
-        for i in range(0, self.incompletePhis.length()) {
+        for i in range(0, self.incompletePhis.length) {
             self.incompletePhis(i) = HashMap[BytecodeRegister, PhiInst]();
         }
     }
@@ -55,7 +55,7 @@ class SsaGen(let bc: BytecodeFunction, let starts: BitSet, let blocks: Int): Byt
             block.appendPhi(phi);
             self.incompletePhis.get(block.id).insert(register, phi);
             phi as Inst
-        } else if block.predecessors.length() == 1 {
+        } else if block.predecessors.length == 1 {
             self.readVariable(register, block.predecessors.first().unwrap())
         } else {
             let phi = PhiInst();
@@ -103,7 +103,7 @@ class SsaGen(let bc: BytecodeFunction, let starts: BitSet, let blocks: Int): Byt
 
         phi.replaceWith(same.unwrap());
 
-        for i in range(0, users.length()) {
+        for i in range(0, users.length) {
             let user = users(i);
 
             if user === phi {
@@ -347,7 +347,7 @@ class SsaGen(let bc: BytecodeFunction, let starts: BitSet, let blocks: Int): Byt
 
 class BasicBlockFinder(let bc: BytecodeFunction): BytecodeVisitor {
     var offset: Int = 0;
-    var starts: BitSet = BitSet(bc.code.length());
+    var starts: BitSet = BitSet(bc.code.length);
     var blocks: Int = 0;
 
     fun analyze() {

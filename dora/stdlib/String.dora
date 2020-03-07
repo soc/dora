@@ -2,11 +2,11 @@
   fun equals(rhs: String) -> Bool {
     var i = 0;
 
-    if self.length() != rhs.length() {
+    if self.length != rhs.length {
         return false;
     }
 
-    let len = self.length();
+    let len = self.length;
 
     while i < len {
         if self.getByte(i) != rhs.getByte(i) {
@@ -23,7 +23,7 @@
 
   @internal fun compareTo(rhs: String) -> Int;
 
-  @internal fun length() -> Int;
+  @internal fun length -> Int;
 
   @internal fun toIntSuccess() -> Bool;
   @internal fun toLongSuccess() -> Bool;
@@ -66,7 +66,7 @@
   }
 
   @static fun fromBytes(val: Array[Byte]) -> Option[String] {
-    let value = String::fromBytesPartOrNull(val, 0, val.length());
+    let value = String::fromBytesPartOrNull(val, 0, val.length);
   
     if value === nil {
       none[String]()
@@ -90,19 +90,19 @@
   @static fun binary(var data: Long) -> String {
     if data == 0L { return "0"; }
     let array = Array[Byte](64);
-    var at = array.length();
+    var at = array.length;
     while data != 0L {
       array(at - 1) = ('0'.toLong() + (data & 1L)).toByte();
       data = data.shiftRight(1);
       at = at - 1;
     }
-    return String::fromBytesPart(array, at, array.length() - at + 1).unwrap();
+    return String::fromBytesPart(array, at, array.length - at + 1).unwrap();
   }
 
   @static fun hex(var data: Long) -> String {
     if data == 0L { return "0"; }
     let array = Array[Byte](16);
-    var at = array.length();
+    var at = array.length;
     while (data != 0L) {
       let digit = (data & 0xFL).toInt();
 
@@ -115,10 +115,10 @@
       data = data.shiftRight(4);
       at = at - 1;
     }
-    return String::fromBytesPart(array, at, array.length() - at + 1).unwrap();
+    return String::fromBytesPart(array, at, array.length - at + 1).unwrap();
   }
 
-  fun isEmpty() -> Bool = self.length() == 0;
+  fun isEmpty() -> Bool = self.length == 0;
 
   fun codePoints() -> CodepointIterator = CodepointIterator(self, 0);
 }

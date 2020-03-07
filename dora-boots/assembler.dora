@@ -17,8 +17,8 @@ class AssemblerBuffer {
         self.slow_paths.push(slow_path);
     }
 
-    fun length() -> Int {
-        self.buffer.length()
+    fun length -> Int {
+        self.buffer.length
     }
 
     fun capacity() -> Int {
@@ -34,7 +34,7 @@ class AssemblerBuffer {
     let buffer = AssemblerBuffer();
     buffer.emitByte(0x01Y);
     buffer.emitByte(0x02Y);
-    assert(buffer.length() == 2);
+    assert(buffer.length == 2);
 }
 
 @test fun testAssemblerBufferEmitInt(_x: Testing) {
@@ -45,7 +45,7 @@ class AssemblerBuffer {
     assert(buffer(1) == 0x33Y);
     assert(buffer(2) == 0x22Y);
     assert(buffer(3) == 0x11Y);
-    assert(buffer.length() == 4);
+    assert(buffer.length == 4);
 }
 
 @open @abstract class SlowPath {
@@ -132,7 +132,7 @@ fun asmInt(buffer: Array[Byte], index: Int, value: Int) {
 fun printBuffer(buffer: Array[Byte]) {
     var i = 0;
 
-    while i < buffer.length() {
+    while i < buffer.length {
         let val = buffer(i);
         if i > 0 { print(" "); }
         print(intToHexString(val.toInt(), 2));
@@ -160,7 +160,7 @@ fun intToHexString(var val: Int, padding: Int) -> String {
         result = "0";
     }
 
-    while result.length() < padding {
+    while result.length < padding {
         result = "0${result}";
     }
 
