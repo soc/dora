@@ -4,13 +4,13 @@
   @internal fun toDouble -> Double;
   @internal fun toString() -> String;
 
-  @internal fun asInt() -> Int;
+  @internal fun asInt -> Int;
 
   @internal fun equals(rhs: Float) -> Bool;
   @internal fun compareTo(rhs: Float) -> Int;
   fun sortsAs(rhs: Float) -> Int {
-    var ix = self.asInt();
-    var iy = rhs.asInt();
+    var ix = self.asInt;
+    var iy = rhs.asInt;
 
     let sx = ix.shiftRightSigned(31).shiftRight(1);
     let sy = iy.shiftRightSigned(31).shiftRight(1);
@@ -33,7 +33,7 @@
   @internal fun isNan() -> Bool;
   @internal fun sqrt() -> Float;
 
-  fun hash() -> Int = self.asInt();
+  fun hash() -> Int = self.asInt;
 
   @static fun bits() -> Int = 32;
   @static fun bytes() -> Int = 4;
