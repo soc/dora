@@ -39,7 +39,7 @@
   @internal fun rotateLeft(by: Int) -> Long;
   @internal fun rotateRight(by: Int) -> Long;
 
-  @internal fun unaryPlus() -> Long;
+  @internal fun unaryPlus -> Long;
   @internal fun unaryMinus() -> Long;
   @internal fun not -> Long;
 

@@ -5,7 +5,7 @@ fun main() {
 }
 
 class SomeTest[T](let x: T) {
-    fun unaryPlus() -> T {
+    fun unaryPlus -> T {
         return self.x;
     }
 

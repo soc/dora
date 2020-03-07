@@ -40,7 +40,7 @@
   @internal fun rotateLeft(by: Int) -> Int;
   @internal fun rotateRight(by: Int) -> Int;
 
-  @internal fun unaryPlus() -> Int;
+  @internal fun unaryPlus -> Int;
   @internal fun unaryMinus() -> Int;
   @internal fun not -> Int;
 

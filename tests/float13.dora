@@ -5,7 +5,7 @@ fun main() {
 }
 
 class SomeTest {
-    fun unaryPlus() -> Float {
+    fun unaryPlus -> Float {
         return 1.0F;
     }
 

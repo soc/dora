@@ -1,5 +1,5 @@
 fun main() {
-  let x = 1.0F.unaryPlus();
+  let x = 1.0F.unaryPlus;
   assert(x == +1.0F);
 
   let x = 1.0F.unaryMinus();
