@@ -10,9 +10,9 @@
   @internal fun toCharUnchecked() -> Char;
   @internal fun toInt -> Int;
   @internal fun toString() -> String;
-  fun toStringHex() -> String { String::hex(self) }
+  fun toStringHex -> String { String::hex(self) }
 
-  fun toStringBinary() -> String = String::binary(self);
+  fun toStringBinary -> String = String::binary(self);
 
   @internal fun toFloat -> Float;
   @internal fun toDouble -> Double;

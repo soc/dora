@@ -4,6 +4,6 @@ fun main() {
   assert(true.not == false);
   assert(false.not == true);
 
-  assert(true.toStringBinary() == "1");
-  assert(false.toStringBinary() == "0");
+  assert(true.toStringBinary == "1");
+  assert(false.toStringBinary == "0");
 }

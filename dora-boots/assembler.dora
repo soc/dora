@@ -96,28 +96,28 @@ class Immediate(let value: Long) {
 
 fun asm1(buffer: Array[Byte], index: Int, val: Byte) {
     if buffer(index) != val {
-        println("expected ${val.toStringHex()} but got ${buffer(index).toStringHex()}")
+        println("expected ${val.toStringHex} but got ${buffer(index).toStringHex}")
     }
     assert(buffer(index) == val);
 }
 
 fun asm2(buffer: Array[Byte], index: Int, val1: Byte, val2: Byte) {
     if buffer(index) != val1 || buffer(index+1) != val2 {
-        println("expected ${val1.toStringHex()} ${val2.toStringHex()} but got ${buffer(index).toStringHex()} ${buffer(index+1).toStringHex()}")
+        println("expected ${val1.toStringHex} ${val2.toStringHex} but got ${buffer(index).toStringHex} ${buffer(index+1).toStringHex}")
     }
     assert(buffer(index) == val1 && buffer(index+1) == val2);
 }
 
 fun asm3(buffer: Array[Byte], index: Int, val1: Byte, val2: Byte, val3: Byte) {
     if buffer(index) != val1 || buffer(index+1) != val2 || buffer(index+2) != val3 {
-        println("expected ${val1.toStringHex()} ${val2.toStringHex()} ${val3.toStringHex()} but got ${buffer(index).toStringHex()} ${buffer(index+1).toStringHex()} ${buffer(index+2).toStringHex()}")
+        println("expected ${val1.toStringHex} ${val2.toStringHex} ${val3.toStringHex} but got ${buffer(index).toStringHex} ${buffer(index+1).toStringHex} ${buffer(index+2).toStringHex}")
     }
     assert(buffer(index) == val1 && buffer(index+1) == val2 && buffer(index+2) == val3);
 }
 
 fun asm4(buffer: Array[Byte], index: Int, val1: Byte, val2: Byte, val3: Byte, val4: Byte) {
     if buffer(index) != val1 || buffer(index+1) != val2 || buffer(index+2) != val3 || buffer(index+3) != val4 {
-        println("expected ${val1.toStringHex()} ${val2.toStringHex()} ${val3.toStringHex()} ${val4.toStringHex()} but got ${buffer(index).toStringHex()} ${buffer(index+1).toStringHex()} ${buffer(index+2).toStringHex()} ${buffer(index+3).toStringHex()}")
+        println("expected ${val1.toStringHex} ${val2.toStringHex} ${val3.toStringHex} ${val4.toStringHex} but got ${buffer(index).toStringHex} ${buffer(index+1).toStringHex} ${buffer(index+2).toStringHex} ${buffer(index+3).toStringHex}")
     }
     assert(buffer(index) == val1 && buffer(index+1) == val2 && buffer(index+2) == val3 && buffer(index+3) == val4);
 }
