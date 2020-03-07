@@ -8,5 +8,5 @@
   fun toStringBinary() -> String = if self { "1" } else { "0" };
 
   @internal fun equals(rhs: Bool) -> Bool;
-  @internal fun not() -> Bool;
+  @internal fun not -> Bool;
 }
