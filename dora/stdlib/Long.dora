@@ -43,8 +43,8 @@
   @internal fun unaryMinus -> Long;
   @internal fun not -> Long;
 
-  @internal fun countZeroBits() -> Int = self.not.countOneBits();
-  @internal fun countOneBits() -> Int {
+  @internal fun countZeroBits -> Int = self.not.countOneBits;
+  @internal fun countOneBits -> Int {
     var x = self;
     var c = 0;
     while (x != 0L) {
@@ -53,7 +53,7 @@
     }
     return c;
   }
-  @internal fun countZeroBitsLeading() -> Int {
+  @internal fun countZeroBitsLeading -> Int {
     if self == 0L {
       return Long::bits();
     }
@@ -65,8 +65,8 @@
     }
     return r;
   }
-  @internal fun countOneBitsLeading() -> Int = self.not.countZeroBitsLeading();
-  @internal fun countZeroBitsTrailing() -> Int {
+  @internal fun countOneBitsLeading -> Int = self.not.countZeroBitsLeading;
+  @internal fun countZeroBitsTrailing -> Int {
     if self == 0L {
       return Long::bits();
     }
@@ -78,7 +78,7 @@
     }
     return r;
   }
-  @internal fun countOneBitsTrailing() -> Int = self.not.countZeroBitsTrailing();
+  @internal fun countOneBitsTrailing -> Int = self.not.countZeroBitsTrailing;
 
   fun hash() -> Int = self.toInt;
 
