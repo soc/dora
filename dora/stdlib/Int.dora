@@ -41,7 +41,7 @@
   @internal fun rotateRight(by: Int) -> Int;
 
   @internal fun unaryPlus -> Int;
-  @internal fun unaryMinus() -> Int;
+  @internal fun unaryMinus -> Int;
   @internal fun not -> Int;
 
   @internal fun countZeroBits() -> Int = self.not.countOneBits();

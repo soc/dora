@@ -28,7 +28,7 @@
   @internal fun div(rhs: Float) -> Float;
 
   @internal fun unaryPlus -> Float;
-  @internal fun unaryMinus() -> Float;
+  @internal fun unaryMinus -> Float;
 
   @internal fun isNan() -> Bool;
   @internal fun sqrt() -> Float;

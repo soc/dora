@@ -40,7 +40,7 @@
   @internal fun rotateRight(by: Int) -> Long;
 
   @internal fun unaryPlus -> Long;
-  @internal fun unaryMinus() -> Long;
+  @internal fun unaryMinus -> Long;
   @internal fun not -> Long;
 
   @internal fun countZeroBits() -> Int = self.not.countOneBits();

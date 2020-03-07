@@ -9,7 +9,7 @@ class SomeTest[T](let x: T) {
         return self.x;
     }
 
-    fun unaryMinus() -> T {
+    fun unaryMinus -> T {
         return self.x;
     }
 }

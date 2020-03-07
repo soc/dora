@@ -9,7 +9,7 @@ class SomeTest {
         return 1.0F;
     }
 
-    fun unaryMinus() -> Float {
+    fun unaryMinus -> Float {
         return 2.0F;
     }
 }

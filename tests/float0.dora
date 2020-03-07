@@ -2,7 +2,7 @@ fun main() {
   let x = 1.0F.unaryPlus;
   assert(x == +1.0F);
 
-  let x = 1.0F.unaryMinus();
+  let x = 1.0F.unaryMinus;
   assert(x == -1.0F);
 
   let x = 1.0F.plus(2.0F);

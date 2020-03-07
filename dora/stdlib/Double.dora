@@ -29,7 +29,7 @@
   @internal fun div(rhs: Double) -> Double;
 
   @internal fun unaryPlus -> Double;
-  @internal fun unaryMinus() -> Double;
+  @internal fun unaryMinus -> Double;
 
   @internal fun isNan() -> Bool;
   @internal fun sqrt() -> Double;
