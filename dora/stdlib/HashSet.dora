@@ -17,8 +17,8 @@ class HashSet[K: Hash + Equals] {
         self.map.length
     }
 
-    fun isEmpty() -> Bool {
-        self.map.isEmpty()
+    fun isEmpty -> Bool {
+        self.map.isEmpty
     }
 
     fun capacity() -> Int {

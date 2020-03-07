@@ -4,7 +4,7 @@
   @internal fun get(idx: Int) -> T;
   @internal fun set(idx: Int, val: T);
 
-  fun isEmpty() -> Bool = self.length == 0;
+  fun isEmpty -> Bool = self.length == 0;
 
 }
 

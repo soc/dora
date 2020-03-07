@@ -188,7 +188,7 @@ class HashMap[K: Hash + Equals, V] {
         return self.size;
     }
 
-    fun isEmpty() -> Bool {
+    fun isEmpty -> Bool {
         return self.size == 0;
     }
 

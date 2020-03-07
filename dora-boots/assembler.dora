@@ -156,7 +156,7 @@ fun intToHexString(var val: Int, padding: Int) -> String {
         result = "${digit}${result}";
     }
 
-    if result.isEmpty() {
+    if result.isEmpty {
         result = "0";
     }
 

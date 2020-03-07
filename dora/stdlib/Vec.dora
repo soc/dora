@@ -92,7 +92,7 @@ class Vec[T] {
     return self.len;
   }
 
-  fun isEmpty() -> Bool {
+  fun isEmpty -> Bool {
     self.len == 0
   }
 

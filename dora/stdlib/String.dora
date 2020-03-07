@@ -118,7 +118,7 @@
     return String::fromBytesPart(array, at, array.length - at + 1).unwrap();
   }
 
-  fun isEmpty() -> Bool = self.length == 0;
+  fun isEmpty -> Bool = self.length == 0;
 
   fun codePoints() -> CodepointIterator = CodepointIterator(self, 0);
 }

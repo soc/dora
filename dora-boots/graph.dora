@@ -335,7 +335,7 @@ class InstLinkedList {
     var first: Option[Inst] = none[Inst]();
     var last: Option[Inst] = none[Inst]();
 
-    fun isEmpty() -> Bool {
+    fun isEmpty -> Bool {
         self.first.isNone()
     }
 

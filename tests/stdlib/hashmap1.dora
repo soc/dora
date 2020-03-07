@@ -11,7 +11,7 @@ fun main() {
     assert(map.get(7).unwrap() == "c");
     assert(map.get(2).isNone());
     assert(map.length == 3);
-    assert(map.isEmpty().not());
+    assert(map.isEmpty.not());
 
     assert(map.contains(1));
     assert(map.contains(10000));
@@ -25,7 +25,7 @@ fun main() {
     assert(map.get(7).unwrap() == "c");
     assert(map.get(2).isNone());
     assert(map.length == 2);
-    assert(map.isEmpty().not());
+    assert(map.isEmpty.not());
 
     assert(map.contains(1));
     assert(!map.contains(10000));

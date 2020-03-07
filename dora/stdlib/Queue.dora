@@ -60,7 +60,7 @@ class Queue[T] {
     return self.count;
   }
 
-  @pub fun isEmpty() -> Bool {
+  @pub fun isEmpty -> Bool {
     return self.count == 0;
   }
 }

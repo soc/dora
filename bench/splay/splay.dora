@@ -151,12 +151,12 @@ fun generatePayloadTree(depth: Int, tag: String) -> PayloadNode {
 class SplayTree {
     var root: SplayNode;
 
-    fun isEmpty() -> Bool {
+    fun isEmpty -> Bool {
         return self.root === nil;
     }
 
     fun insert(key: Int, value: PayloadNode) {
-        if self.isEmpty() {
+        if self.isEmpty {
             self.root = SplayNode(key, value);
             return;
         }
@@ -184,7 +184,7 @@ class SplayTree {
     }
 
     fun remove(key: Int) -> SplayNode {
-        if self.isEmpty() {
+        if self.isEmpty {
             return nil;
         }
 
@@ -209,7 +209,7 @@ class SplayTree {
     }
 
     fun find(key: Int) -> SplayNode {
-        if self.isEmpty() {
+        if self.isEmpty {
             return nil;
         }
 
@@ -223,7 +223,7 @@ class SplayTree {
     }
 
     fun findMax(startNode: SplayNode) -> SplayNode {
-        if self.isEmpty() {
+        if self.isEmpty {
             return nil;
         }
 
@@ -241,7 +241,7 @@ class SplayTree {
     }
 
     fun findGreatestLessThan(key: Int) -> SplayNode {
-        if self.isEmpty() {
+        if self.isEmpty {
             return nil;
         }
 
@@ -263,7 +263,7 @@ class SplayTree {
     }
 
     fun splay(key: Int) {
-        if self.isEmpty() {
+        if self.isEmpty {
             return;
         }
 
