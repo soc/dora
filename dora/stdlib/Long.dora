@@ -17,7 +17,7 @@
   @internal fun toFloat -> Float;
   @internal fun toDouble -> Double;
 
-  @internal fun asDouble() -> Double;
+  @internal fun asDouble -> Double;
 
   @internal fun equals(rhs: Long) -> Bool;
   @internal fun compareTo(rhs: Long) -> Int;

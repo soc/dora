@@ -25,18 +25,18 @@ fun main() {
     assert((-0.0F) == Int::minValue().asFloat);
     assert(Int::maxValue().asFloat.isNan());
 
-    assert(0.0 == 0L.asDouble());
-    assert(4.9E-324 == 1L.asDouble());
-    assert(1.5E-323 == 3L.asDouble());
-    assert((-1L).asDouble().isNan());
-    assert(Int::minValue().toLong.asDouble().isNan());
-    assert(Int::maxValue().toLong.asDouble() == 1.060997895E-314);
-    assert((-0.0) == Long::minValue().asDouble());
-    assert(Long::maxValue().asDouble().isNan());
+    assert(0.0 == 0L.asDouble);
+    assert(4.9E-324 == 1L.asDouble);
+    assert(1.5E-323 == 3L.asDouble);
+    assert((-1L).asDouble.isNan());
+    assert(Int::minValue().toLong.asDouble.isNan());
+    assert(Int::maxValue().toLong.asDouble == 1.060997895E-314);
+    assert((-0.0) == Long::minValue().asDouble);
+    assert(Long::maxValue().asDouble.isNan());
 
     let x = 123456789;
     assert(x == x.asFloat.asInt());
-    assert(x.toLong == x.toLong.asDouble().asLong());
+    assert(x.toLong == x.toLong.asDouble.asLong());
     assert(x.toFloat == x.toFloat.asInt().asFloat);
-    assert(x.toDouble == x.toDouble.asLong().asDouble());
+    assert(x.toDouble == x.toDouble.asLong().asDouble);
 }

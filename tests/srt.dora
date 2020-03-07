@@ -51,19 +51,19 @@ fun main() {
     assert(nanSignaPositive.sortsAs(1.0F) == 1);
 
     // 1111111111111000000000000000000000000000000000000000000000000000
-    let nanQuietNegative = (-2251799813685248L).asDouble();
+    let nanQuietNegative = (-2251799813685248L).asDouble;
     // 1111111111110000000000000000000000000000000000000000000000000001
-    let nanSignaNegative = (-4503599627370495L).asDouble();
+    let nanSignaNegative = (-4503599627370495L).asDouble;
     // 1111111111110000000000000000000000000000000000000000000000000000
-    let infNegative = (-4503599627370496L).asDouble();
+    let infNegative = (-4503599627370496L).asDouble;
     // negative numbers
     // positive numbers
     // 0111111111110000000000000000000000000000000000000000000000000000
-    let infPositive = 9218868437227405312L.asDouble();
+    let infPositive = 9218868437227405312L.asDouble;
     // 0111111111110000000000000000000000000000000000000000000000000001
-    let nanSignaPositive = 9218868437227405313L.asDouble();
+    let nanSignaPositive = 9218868437227405313L.asDouble;
     // 0111111111111000000000000000000000000000000000000000000000000000
-    let nanQuietPositive = 9221120237041090560L.asDouble();
+    let nanQuietPositive = 9221120237041090560L.asDouble;
 
     assert(nanQuietNegative.sortsAs(nanSignaNegative) == -1);
     assert(nanSignaNegative.sortsAs(infNegative) == -1);
