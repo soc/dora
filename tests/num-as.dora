@@ -37,6 +37,6 @@ fun main() {
     let x = 123456789;
     assert(x == x.asFloat().asInt());
     assert(x.toLong == x.toLong.asDouble().asLong());
-    assert(x.toFloat() == x.toFloat().asInt().asFloat());
+    assert(x.toFloat == x.toFloat.asInt().asFloat());
     assert(x.toDouble() == x.toDouble().asLong().asDouble());
 }

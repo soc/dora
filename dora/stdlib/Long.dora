@@ -14,7 +14,7 @@
 
   fun toStringBinary() -> String = String::binary(self);
 
-  @internal fun toFloat() -> Float;
+  @internal fun toFloat -> Float;
   @internal fun toDouble() -> Double;
 
   @internal fun asDouble() -> Double;

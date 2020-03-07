@@ -1,7 +1,7 @@
 @internal class Double {
   @internal fun toInt -> Int;
   @internal fun toLong -> Long;
-  @internal fun toFloat() -> Float;
+  @internal fun toFloat -> Float;
   @internal fun toString() -> String;
 
   @internal fun asLong() -> Long;

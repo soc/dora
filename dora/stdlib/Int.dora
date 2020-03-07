@@ -15,7 +15,7 @@
   fun toStringBinary() -> String = String::binary(self.toLong & 0xFFFFFFFFL);
   fun toStringHex() -> String = String::hex(self.toLong & 0xFFFFFFFFL);
 
-  @internal fun toFloat() -> Float;
+  @internal fun toFloat -> Float;
   @internal fun toDouble() -> Double;
 
   @internal fun asFloat() -> Float;
