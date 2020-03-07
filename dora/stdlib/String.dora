@@ -92,7 +92,7 @@
     let array = Array[Byte](64);
     var at = array.length;
     while data != 0L {
-      array(at - 1) = ('0'.toLong + (data & 1L)).toByte();
+      array(at - 1) = ('0'.toLong + (data & 1L)).toByte;
       data = data.shiftRight(1);
       at = at - 1;
     }
@@ -107,9 +107,9 @@
       let digit = (data & 0xFL).toInt;
 
       if digit < 10 {
-        array(at - 1) = ('0'.toInt + digit).toByte();
+        array(at - 1) = ('0'.toInt + digit).toByte;
       } else {
-        array(at - 1) = ('A'.toInt + digit - 10).toByte();
+        array(at - 1) = ('A'.toInt + digit - 10).toByte;
       }
 
       data = data.shiftRight(4);

@@ -795,8 +795,8 @@ class BytecodeWriter {
                     -1
                 };
 
-                self.code.set(jump.inst, opcode.toByte());
-                self.code.set(jump.target, offset.toByte());
+                self.code.set(jump.inst, opcode.toByte);
+                self.code.set(jump.target, offset.toByte);
             }
 
             i = i + 1;
@@ -957,7 +957,7 @@ class BytecodeWriter {
 
     fun emitByte(val: Int) {
         assert(val >= 0 && val <= 255);
-        self.code.push(val.toByte());
+        self.code.push(val.toByte);
     }
 
     fun emitInt(val: Int) {
@@ -970,10 +970,10 @@ class BytecodeWriter {
 
     fun patchInt(idx: Int, val: Int) {
         assert(val >= 0);
-        self.code.set(idx, (val & 0xFF).toByte());
-        self.code.set(idx + 1, ((val >>> 8) & 0xFF).toByte());
-        self.code.set(idx + 2 , ((val >>> 16) & 0xFF).toByte());
-        self.code.set(idx + 3, ((val >>> 24) & 0xFF).toByte());
+        self.code.set(idx, (val & 0xFF).toByte);
+        self.code.set(idx + 1, ((val >>> 8) & 0xFF).toByte);
+        self.code.set(idx + 2 , ((val >>> 16) & 0xFF).toByte);
+        self.code.set(idx + 3, ((val >>> 24) & 0xFF).toByte);
     }
 }
 

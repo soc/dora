@@ -7,10 +7,10 @@ class AssemblerBuffer {
     }
 
     fun emitInt(value: Int) {
-        self.emitByte((value & 0xFF).toByte());
-        self.emitByte(((value >>> 8) & 0xFF).toByte());
-        self.emitByte(((value >>> 16) & 0xFF).toByte());
-        self.emitByte(((value >>> 24) & 0xFF).toByte());
+        self.emitByte((value & 0xFF).toByte);
+        self.emitByte(((value >>> 8) & 0xFF).toByte);
+        self.emitByte(((value >>> 16) & 0xFF).toByte);
+        self.emitByte(((value >>> 24) & 0xFF).toByte);
     }
 
     fun addSlowPath(slow_path: SlowPath) {
@@ -81,8 +81,8 @@ class Immediate(let value: Long) {
         self.value >= Int::minValue().toLong && self.value <= Int::maxValue().toLong
     }
 
-    fun toByte() -> Byte {
-        self.value.toByte()
+    fun toByte -> Byte {
+        self.value.toByte
     }
 
     fun toInt -> Int {
@@ -123,10 +123,10 @@ fun asm4(buffer: Array[Byte], index: Int, val1: Byte, val2: Byte, val3: Byte, va
 }
 
 fun asmInt(buffer: Array[Byte], index: Int, value: Int) {
-    assert(buffer(index) == (value & 0xFF).toByte());
-    assert(buffer(index+1) == ((value >>> 8) & 0xFF).toByte());
-    assert(buffer(index+2) == ((value >>> 16) & 0xFF).toByte());
-    assert(buffer(index+3) == ((value >>> 24) & 0xFF).toByte());
+    assert(buffer(index) == (value & 0xFF).toByte);
+    assert(buffer(index+1) == ((value >>> 8) & 0xFF).toByte);
+    assert(buffer(index+2) == ((value >>> 16) & 0xFF).toByte);
+    assert(buffer(index+3) == ((value >>> 24) & 0xFF).toByte);
 }
 
 fun printBuffer(buffer: Array[Byte]) {

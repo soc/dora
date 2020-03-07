@@ -24,7 +24,7 @@ class Foo {
   }
   fun bar_byte(a: Byte) -> Byte {
     assert(a == 3Y);
-    return (3+a.toInt).toByte();
+    return (3+a.toInt).toByte;
   }
 
   @cannon fun foo_char() -> Char {

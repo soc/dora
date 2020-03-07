@@ -73,7 +73,7 @@ class Mandelbrot(let size: Int) {
             }
 
             if x % 8 == 7 {
-                bufLocal[bufLen] = bits.toByte();
+                bufLocal[bufLen] = bits.toByte;
                 bufLen = bufLen + 1;
 
                 if bufLen == BUFFER_SIZE {
@@ -89,7 +89,7 @@ class Mandelbrot(let size: Int) {
 
         if shift != 0 {
             bits = bits << shift;
-            bufLocal[bufLen] = bits.toByte();
+            bufLocal[bufLen] = bits.toByte;
             bufLen = bufLen + 1;
 
             if bufLen == BUFFER_SIZE {

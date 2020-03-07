@@ -11,9 +11,9 @@ fun main() {
 
 fun test_multiple_ascii_chars() {
     let bytes = Array[Byte](3);
-    bytes(0) = 'a'.toInt.toByte();
-    bytes(1) = 'b'.toInt.toByte();
-    bytes(2) = 'c'.toInt.toByte();
+    bytes(0) = 'a'.toInt.toByte;
+    bytes(1) = 'b'.toInt.toByte;
+    bytes(2) = 'c'.toInt.toByte;
 
     let val = String::fromBytes(bytes).unwrap();
     let it = val.codePoints();

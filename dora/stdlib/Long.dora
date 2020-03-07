@@ -1,5 +1,5 @@
 @internal class Long {
-  @internal fun toByte() -> Byte;
+  @internal fun toByte -> Byte;
   fun toChar() -> Option[Char] {
     if self >= 0L && self <= 0x10FFFFL && (self < 0xD800L || self > 0xDFFFL) {
       some[Char](self.toCharUnchecked())

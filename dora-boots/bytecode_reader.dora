@@ -668,7 +668,7 @@ class BytecodeReader(let data: Array[Byte], let visitor: BytecodeVisitor) {
             self.visitor.visitConstZeroDouble(dest);
         } else if opcode == BC_CONST_BYTE {
             let dest = self.readRegister(wide);
-            let value = self.readByte().toByte();
+            let value = self.readByte().toByte;
             self.visitor.visitConstByte(dest, value);
         } else if opcode == BC_CONST_CHAR {
             let dest = self.readRegister(wide);
