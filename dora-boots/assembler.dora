@@ -74,11 +74,11 @@ class Immediate(let value: Long) {
     }
 
     fun isByte() -> Bool {
-        self.value >= Byte::minValue().toLong() && self.value <= Byte::maxValue().toLong()
+        self.value >= Byte::minValue().toLong && self.value <= Byte::maxValue().toLong
     }
 
     fun isInt() -> Bool {
-        self.value >= Int::minValue().toLong() && self.value <= Int::maxValue().toLong()
+        self.value >= Int::minValue().toLong && self.value <= Int::maxValue().toLong
     }
 
     fun toByte() -> Byte {
@@ -89,7 +89,7 @@ class Immediate(let value: Long) {
         self.value.toInt
     }
 
-    fun toLong() -> Long {
+    fun toLong -> Long {
         self.value
     }
 }

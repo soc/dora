@@ -1,6 +1,6 @@
 @internal class Float {
   @internal fun toInt -> Int;
-  @internal fun toLong() -> Long;
+  @internal fun toLong -> Long;
   @internal fun toDouble() -> Double;
   @internal fun toString() -> String;
 

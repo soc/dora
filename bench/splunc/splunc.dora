@@ -175,7 +175,7 @@ fun main() {
         exit(1);
     }
 
-    let rnd = Random(argv(0).toLong().unwrap());
+    let rnd = Random(argv(0).toLong.unwrap());
     let max_size = argv(1).toInt.unwrap();
     var date = 0;
 

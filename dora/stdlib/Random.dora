@@ -10,8 +10,8 @@ class Random(var seed: Long) {
     let bound_minus_1 = bound - 1;
 
     if (bound & bound_minus_1) == 0 {
-      let num = self.nextInt31().toLong();
-      return ((bound.toLong() * num) >>> 31).toInt;
+      let num = self.nextInt31().toLong;
+      return ((bound.toLong * num) >>> 31).toInt;
     }
 
     var mod = 0;
@@ -41,6 +41,6 @@ class Random(var seed: Long) {
     let w1 = self.nextInt();
     let w2 = self.nextInt();
 
-    return (w1.toLong() << 32) | w2.toLong();
+    return (w1.toLong << 32) | w2.toLong;
   }
 }

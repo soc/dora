@@ -57,7 +57,7 @@ fun heightToNodes(var h: Int) -> Long {
 }
 
 fun heightToBytes(h: Int) -> Long {
-    return BYTES_PER_NODE.toLong() * heightToNodes(h);
+    return BYTES_PER_NODE.toLong * heightToNodes(h);
 }
 
 fun nodesToHeight(nnodes: Long) -> Int {
@@ -73,7 +73,7 @@ fun nodesToHeight(nnodes: Long) -> Int {
 }
 
 fun bytesToHeight(bytes: Long) -> Int {
-    return nodesToHeight(bytes / BYTES_PER_NODE.toLong());
+    return nodesToHeight(bytes / BYTES_PER_NODE.toLong);
 }
 
 fun makeTree(h: Int) -> TreeNode {
@@ -90,11 +90,11 @@ fun makeTree(h: Int) -> TreeNode {
 }
 
 fun initialize() {
-    let ntrees = ((size * MEG).toLong() / treeSize).toInt;
+    let ntrees = ((size * MEG).toLong / treeSize).toInt;
     trees = Array[TreeNode](ntrees);
 
     println("Allocating " + ntrees.toString() + " trees.");
-    println("  (" + (ntrees.toLong() * treeSize).toString() + " bytes)");
+    println("  (" + (ntrees.toLong * treeSize).toString() + " bytes)");
 
     var i = 0;
 
@@ -231,7 +231,7 @@ fun oldGenMut(n: Long) {
 
 fun doMutWork(n: Long) {
     var sum = 0;
-    let limit = workUnits.toLong() * n / 10L;
+    let limit = workUnits.toLong * n / 10L;
 
     var k = 0L;
 
@@ -240,7 +240,7 @@ fun doMutWork(n: Long) {
         k = k + 1L;
     }
 
-    mutatorSum = mutatorSum + sum.toLong();
+    mutatorSum = mutatorSum + sum.toLong;
 }
 
 fun doYoungGenAlloc(n: Long, nwords: Int) {
@@ -249,7 +249,7 @@ fun doYoungGenAlloc(n: Long, nwords: Int) {
 
     while allocated < n {
         aexport = Array[Long](nwords);
-        allocated = allocated + nbytes.toLong();
+        allocated = allocated + nbytes.toLong;
     }
 
     youngBytes = youngBytes + allocated;
@@ -260,8 +260,8 @@ fun doStep(n: Long) {
 
     doYoungGenAlloc(n, WORDS_DEAD);
     doMutWork(n);
-    oldGenAlloc(n / promoteRate.toLong());
-    oldGenMut(Long::max(0L, (mutations + ptrMutRate.toLong()) - actuallyMut));
+    oldGenAlloc(n / promoteRate.toLong);
+    oldGenMut(Long::max(0L, (mutations + ptrMutRate.toLong) - actuallyMut));
 }
 
 fun main() {
@@ -304,7 +304,7 @@ fun main() {
     var step = 0;
 
     while step < steps {
-        doStep(MEG.toLong());
+        doStep(MEG.toLong);
         step = step + 1;
     }
 
@@ -321,12 +321,12 @@ fun main() {
     let promoted = steps.toFloat() / promoteRate.toFloat();
     println("Promoted " + promoted.toString()
             + " Mb (= " + (promoted / secs).toString() + " Mb/sec)");
-    println("    (actually promoted " + ((nodes * BYTES_PER_NODE.toLong()).toFloat() / MEG.toFloat()).toString() + " megabytes)");
+    println("    (actually promoted " + ((nodes * BYTES_PER_NODE.toLong).toFloat() / MEG.toFloat()).toString() + " megabytes)");
 
     if ptrMutRate != 0 {
         println("Mutated " + actuallyMut.toString() +
                 " pointers (= " + (actuallyMut.toFloat() / secs).toString() + " ptrs/sec)");
     }
 
-    println("Checksum = " + (mutatorSum + aexport.length.toLong()).toString());
+    println("Checksum = " + (mutatorSum + aexport.length.toLong).toString());
 }

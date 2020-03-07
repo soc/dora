@@ -39,7 +39,7 @@
     }
   }
 
-  fun toLong() -> Option[Long] {
+  fun toLong -> Option[Long] {
     if self.toLongSuccess() {
       some[Long](self.toLongOrZero())
     } else {
@@ -92,7 +92,7 @@
     let array = Array[Byte](64);
     var at = array.length;
     while data != 0L {
-      array(at - 1) = ('0'.toLong() + (data & 1L)).toByte();
+      array(at - 1) = ('0'.toLong + (data & 1L)).toByte();
       data = data.shiftRight(1);
       at = at - 1;
     }

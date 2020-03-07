@@ -4,7 +4,7 @@ fun main() {
         exit(1);
     }
 
-    rnd = Random(argv(0).toLong().unwrap());
+    rnd = Random(argv(0).toLong.unwrap());
     splayTreeSize = argv(1).toInt.unwrap();
     let iterations = argv(2).toInt.unwrap();
 
