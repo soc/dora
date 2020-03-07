@@ -54,7 +54,7 @@ class NBodySystem {
                 let dz = iBody.z - bodies[j].z;
 
                 let dSquared = dx * dx + dy * dy + dz * dz;
-                let distance = dSquared.sqrt();
+                let distance = dSquared.sqrt;
                 let mag = dt / (dSquared * distance);
 
                 iBody.vx = iBody.vx - dx * bodies[j].mass * mag;
@@ -109,7 +109,7 @@ class NBodySystem {
             dy = iBody.y - jBody.y;
             dz = iBody.z - jBody.z;
 
-            distance = (dx*dx + dy*dy + dz*dz).sqrt();
+            distance = (dx*dx + dy*dy + dz*dz).sqrt;
             e = e - (iBody.mass * jBody.mass) / distance;
 
             j = j + 1;

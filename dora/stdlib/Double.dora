@@ -31,8 +31,8 @@
   @internal fun unaryPlus -> Double;
   @internal fun unaryMinus -> Double;
 
-  @internal fun isNan() -> Bool;
-  @internal fun sqrt() -> Double;
+  @internal fun isNan -> Bool;
+  @internal fun sqrt -> Double;
 
   fun hash() -> Int = self.asLong.toInt;
 

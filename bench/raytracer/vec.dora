@@ -88,7 +88,7 @@ class Vec3 {
     }
 
     fun normalize() {
-        let len = (x*x + y*y + z*z).sqrt();
+        let len = (x*x + y*y + z*z).sqrt;
 
         if len > 0.0 {
             self.x = self.x / len;

@@ -21,7 +21,7 @@ class Sphere: Primitive {
             return nil;
         }
 
-        let disc = disc.sqrt();
+        let disc = disc.sqrt;
         let t = 0.0;
         
         if b - disc < 1.0e-6 {

@@ -30,8 +30,8 @@
   @internal fun unaryPlus -> Float;
   @internal fun unaryMinus -> Float;
 
-  @internal fun isNan() -> Bool;
-  @internal fun sqrt() -> Float;
+  @internal fun isNan -> Bool;
+  @internal fun sqrt -> Float;
 
   fun hash() -> Int = self.asInt;
 

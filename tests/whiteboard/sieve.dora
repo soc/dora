@@ -15,7 +15,7 @@ fun sieve(limit: Int) -> Vec[Int] {
 
     if limit >= 2 {
         let numbers = arrayFill[Bool](limit+1, true);
-        let sqrtLimit = limit.toDouble.sqrt().toInt;
+        let sqrtLimit = limit.toDouble.sqrt.toInt;
 
         var factor = 2;
 
