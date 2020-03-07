@@ -98,7 +98,7 @@ fun main() {
     var i = 0;
 
     while i < kArraySize / 2 {
-        array(i) = 1.0/i.toDouble();
+        array(i) = 1.0/i.toDouble;
         i = i + 1;
     }
 
