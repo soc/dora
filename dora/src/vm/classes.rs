@@ -88,8 +88,6 @@ pub struct Class {
 }
 
 impl Class {
-
-    #[allow(dead_code)]
     pub fn new(
         vm: &VM,
         id: ClassId,
@@ -98,7 +96,7 @@ impl Class {
         namespace_id: NamespaceId,
         has_constructor: bool,
     ) -> Class {
-        let annotations = ast::AnnotationUsages::new();
+        let annotations = &ast.annotation_usages;
         let type_params = ast.type_params.as_ref().map_or(Vec::new(), |type_params| {
             type_params
                 .iter()
@@ -128,9 +126,9 @@ impl Class {
                     .read()
                     .name,
             ),
+            is_pub: annotations.contains(vm.annotations.idx(vm.known.annotations.pub_).read().name),
             internal_resolved: false,
             has_constructor,
-            is_pub: false,
             table: SymTable::new(),
 
             constructor: None,
@@ -147,7 +145,7 @@ impl Class {
 
             is_array: false,
             is_str: false,
-            primitive_type: None
+            primitive_type: None,
         }
     }
 
